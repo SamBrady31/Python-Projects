@@ -5,6 +5,16 @@ import random, time
 user_score = 0
 computer_score = 0
 
+
+
+
+
+# HERE COMES THE GAMBLING CODE BABYYYYYY
+
+
+
+
+
 # make the game replayable
 while True:
 
