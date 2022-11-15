@@ -4,8 +4,8 @@ import random, time
 # keep score. add +1 to user_score if result is positive. add +1 to computer_score if result is positive. nothing if tied
 user_score = 0
 computer_score = 0
-wager = ""
-result = ""
+wager = 'n'
+result = None
 
 # Options to choose from
 options = ("Rock", "Paper", "Scissors")
@@ -38,11 +38,6 @@ while True:
     # get random choice from computer and delay answer
     computer_choice = random.choice(options)
     print("Computer chooses.....")
-    time.sleep(0.5)
-    print(".")
-    time.sleep(0.5)
-    print(".")
-    time.sleep(0.5)
     print(computer_choice)
 
     time.sleep(0.5)
@@ -55,19 +50,19 @@ while True:
         print("You Lose SUCKAAA")
         result = "Lose"
         if wager == "y" and result == "Lose":
-            user_score = user_score * 0
+            user_score = user_score - user_score
         computer_score += 1
     elif user_choice == ("Rock") and computer_choice == ("Paper"):
         print("You Lose SUCKAAA")
         result = "Lose"
         if wager == "y" and result == "Lose":
-            user_score = user_score * 0
+            user_score = user_score - user_score
         computer_score += 1
     elif user_choice == ("Paper") and computer_choice == ("Scissors"):
         print("You Lose SUCKAAA")
         result = "Lose"
         if wager == "y" and result == "Lose":
-            user_score = user_score * 0
+            user_score = user_score - user_score
         computer_score += 1
     elif user_choice == ("Paper") and computer_choice == ("Rock"):
         print("You Win!")
@@ -93,6 +88,8 @@ while True:
 
 
     print("The score is currently "+str(user_score) + " to "+str(computer_score))
+
+    wager = 'n'
 
     # ask to play again
     again = input("Type no to leave, enter to continue")
